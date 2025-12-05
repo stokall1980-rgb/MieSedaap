@@ -1,0 +1,11 @@
+const toggle = document.getElementById("darkModeToggle");
+
+toggle.addEventListener("change", () => {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+});
+
+if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark");
+    toggle.checked = true;
+}
